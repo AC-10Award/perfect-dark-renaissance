@@ -55,7 +55,7 @@ static s32 texFilter = FILTER_LINEAR;
 static s32 texAnisotropy = 1;
 static s32 texFilter2D = true;
 static s32 texDetail = false;
-static s32 texExternal = false;
+static s32 texExternal = true;
 
 static u32 dlcount = 0;
 static u32 frames = 0;

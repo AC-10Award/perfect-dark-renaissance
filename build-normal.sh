@@ -55,7 +55,4 @@ fi
 
 "$build_dir/pd.arm64" \
   --moddir ./mods/mod_allinone \
-  --gexmoddir ./mods/mod_gex \
-  --kakarikomoddir ./mods/mod_kakariko \
-  --darknoonmoddir ./mods/mod_dark_noon \
-  --goldfinger64moddir ./mods/mod_goldfinger_64
+  --gexmoddir ./mods/mod_gex

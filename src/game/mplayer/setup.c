@@ -277,49 +277,12 @@ struct mparena g_MpArenas[] = {
 	{ STAGE_MP_TEMPLE,       0, L_MPMENU_133  }, // Temple
 	{ STAGE_MP_COMPLEX,      0, L_MPMENU_134  }, // Complex
 	{ STAGE_TEST_MP6,        0, MD_MPSTAGE_TEXT_CAVES }, // Caves (PD Plus)
-	{ STAGE_TEST_MP2,        0, L_MPMENU_129  }, // Stack (PD Plus)
 	{ STAGE_MP_FELICITY,     0, L_MPMENU_135  }, // Felicity
-	// GoldenEye X Mod
-	{ STAGE_EXTRA6,          0, L_MPMENU_133 }, // Tample
-	{ STAGE_EXTRA2,          0, L_MPMENU_134 }, // Complex
+	// Retained GoldenEye X maps
+	{ STAGE_EXTRA6,          0, L_MPMENU_133 }, // Temple GE64
 	{ STAGE_EXTRA8,          0, MD_MPSTAGE_TEXT_CAVES }, // Caves
-	{ STAGE_EXTRA9,          0, MD_MPSTAGE_TEXT_LIBRARY }, // Library
-	{ STAGE_EXTRA13,         0, MD_MPSTAGE_TEXT_BASEMENT }, // Basement
-	{ STAGE_EXTRA15,         0, MD_MPSTAGE_TEXT_STACK }, // Stack
-	{ STAGE_EXTRA10,         0, MD_MPSTAGE_TEXT_FACILITY }, // Facility
-	{ STAGE_EXTRA11,         0, MD_MPSTAGE_TEXT_BUNKER }, // Bunker
 	{ STAGE_EXTRA4,          0, MD_MPSTAGE_TEXT_ARCHIVES }, // Archives
-	{ STAGE_EXTRA12,         0, MD_MPSTAGE_TEXT_CAVERNS }, // Caverns
-	{ STAGE_EXTRA14,         0, MD_MPSTAGE_TEXT_EGYPTIAN }, // Egyptian
-	{ STAGE_TEST_MP17,       0, MD_MPSTAGE_TEXT_FACILITY_BZ }, // Facility BZ
-	{ STAGE_EXTRA1,          0, MD_MPSTAGE_TEXT_FRIGATE }, // Frigate
-	{ STAGE_TEST_SILO,       0, MD_MPSTAGE_TEXT_ARCHIVES_1F }, // Archives 1F (GE-X 5e)
-	{ STAGE_TEST_MP16,       0, MD_MPSTAGE_TEXT_ARCHIVES_BZ }, // Archives BZ
-	{ STAGE_TEST_MP14,       0, MD_MPSTAGE_TEXT_STREETS }, // Streets
-	{ STAGE_EXTRA3,          0, MD_MPSTAGE_TEXT_TRAIN }, // Train
-	{ STAGE_TEST_MP18,       0, MD_MPSTAGE_TEXT_CRADLE }, // Cradle
-	{ STAGE_EXTRA5,          0, MD_MPSTAGE_TEXT_AZTEC }, // Aztec
-	{ STAGE_TEST_MP20,       0, MD_MPSTAGE_TEXT_CITADEL }, // Citadel
-	{ STAGE_TEST_MP19,       0, MD_MPSTAGE_TEXT_LABYRINTH }, // Labyrinth
-	{ STAGE_EXTRA7,          0, MD_MPSTAGE_TEXT_ICICLE_PYRAMID }, // Icicle Pyramid
-	{ STAGE_TEST_MP8,        0, MD_MPSTAGE_TEXT_CLIFF_BASE }, // Cliff Base
-	// Bonus
-	{ STAGE_24,              0, MD_MPSTAGE_TEXT_KAKARIKO_VILLAGE }, // Kakariko Village (Stormy)
-	{ STAGE_TEST_MP7,        0, MD_MPSTAGE_TEXT_DARK_NOON_VALLEY }, // Dark Noon Mod Valley
-	{ STAGE_TEST_ARCH,       0, MD_MPSTAGE_TEXT_SUBURB }, // Suburb
-	{ STAGE_TEST_DEST,       0, MD_MPSTAGE_TEXT_TRAINING_DAY }, // Training Day
-	{ STAGE_EXTRA16,         0, MD_MPSTAGE_TEXT_RUNWAY }, // Runway
-	{ STAGE_EXTRA17,         0, MD_MPSTAGE_TEXT_CONTROL }, // Control
-	{ STAGE_EXTRA18,         0, MD_MPSTAGE_TEXT_TAWFRET_RUINS }, // Tawfret Ruins
-	{ STAGE_EXTRA19,         0, MD_MPSTAGE_TEXT_TARGITZANS_TEMPLE }, // Targitzan's Temple
-	{ STAGE_EXTRA20,         0, MD_MPSTAGE_TEXT_JUNKYARD }, // Junkyard
-	{ STAGE_EXTRA21,         0, MD_MPSTAGE_TEXT_STEEL_MILL }, // Steel Mill
-	{ STAGE_EXTRA22,         0, MD_MPSTAGE_TEXT_MALL }, // Mall
-	{ STAGE_EXTRA23,         0, MD_MPSTAGE_TEXT_TUNNELS }, // Tunnels
-	{ STAGE_EXTRA24,         0, MD_MPSTAGE_TEXT_ROGUE }, // Rogue
-	{ STAGE_EXTRA25,         0, MD_MPSTAGE_TEXT_PARADOX }, // Paradox
-	{ STAGE_EXTRA26,         0, MD_MPSTAGE_TEXT_WAR_COLORS }, // War Colors
-	{ STAGE_TEST_LAM,        0, MD_MPSTAGE_TEXT_GRAND_LIBRARY }, // Grand Library
+	{ STAGE_EXTRA15,         0, MD_MPSTAGE_TEXT_STACK }, // Stack
 	// Random
 	{ STAGE_MP_RANDOM_MULTI, 0, MD_MPSTAGE_TEXT_RANDOM_MULTI }, // Random Multi
 	{ STAGE_MP_RANDOM_SOLO,  0, MD_MPSTAGE_TEXT_RANDOM_SOLO }, // Random Solo
@@ -333,10 +296,10 @@ static char *mpGetArenaDisplayNameByStage(s32 stagenum, u16 name)
 	switch (stagenum) {
 	case STAGE_EXTRA6:
 		return "Temple GE64";
-	case STAGE_EXTRA2:
-		return "Complex GE64";
 	case STAGE_EXTRA8:
 		return "Caves GE64";
+	case STAGE_EXTRA4:
+		return "Archives GE64";
 	case STAGE_EXTRA15:
 		return "Stack GE64";
 	}
@@ -348,8 +311,8 @@ s32 mpGetNumStages(void)
 {
 #ifdef PLATFORM_N64
 	return 17;
-#else // All Solos in Multi Mod (71 Stage + 4 Random)
-	return 75;
+#else // 35 stages + 4 random choices
+	return 39;
 #endif
 }
 
@@ -362,7 +325,7 @@ s16 mpChooseRandomStage(void)
 #ifdef PLATFORM_N64
 	for (i = 0; i < 16; i++) {
 #else // All Solos in Multi Mod
-	for (i = 0; i < 71; i++) {
+	for (i = 0; i < 35; i++) {
 #endif
 		if (challengeIsFeatureUnlocked(g_MpArenas[i].requirefeature)) {
 			numchallengescomplete++;
@@ -374,7 +337,7 @@ s16 mpChooseRandomStage(void)
 #ifdef PLATFORM_N64
 	for (i = 0; i < 16; i++) {
 #else // All Solos in Multi Mod
-	for (i = 0; i < 71; i++) {
+	for (i = 0; i < 35; i++) {
 #endif
 		if (challengeIsFeatureUnlocked(g_MpArenas[i].requirefeature)) {
 			if (index == 0) {
@@ -395,7 +358,7 @@ s16 mpChooseRandomMultiStage(void)
 	s32 numchallengescomplete = 0;
 	s32 index;
 
-	for (i = 0; i < 32; i++) {
+	for (i = 0; i < 31; i++) {
 		if ((i <= 12 || i >= 27) && challengeIsFeatureUnlocked(g_MpArenas[i].requirefeature)) {
 			numchallengescomplete++;
 		}
@@ -403,7 +366,7 @@ s16 mpChooseRandomMultiStage(void)
 
 	index = rngRandom() % numchallengescomplete;
 
-	for (i = 0; i < 32; i++) {
+	for (i = 0; i < 31; i++) {
 		if ((i <= 12 || i >= 27) && challengeIsFeatureUnlocked(g_MpArenas[i].requirefeature)) {
 			if (index == 0) {
 				return g_MpArenas[i].stagenum;
@@ -449,18 +412,16 @@ s16 mpChooseRandomGexStage(void)
 	s32 numchallengescomplete = 0;
 	s32 index;
 
-	for (i = 0; i < 61; i++) {
-		if (((i >= 32 && i <= 54) || (i >= 59 && i <= 60))
-				&& challengeIsFeatureUnlocked(g_MpArenas[i].requirefeature)) {
+	for (i = 31; i < 35; i++) {
+		if (challengeIsFeatureUnlocked(g_MpArenas[i].requirefeature)) {
 			numchallengescomplete++;
 		}
 	}
 
 	index = rngRandom() % numchallengescomplete;
 
-	for (i = 0; i < 61; i++) {
-		if (((i >= 32 && i <= 54) || (i >= 59 && i <= 60))
-				&& challengeIsFeatureUnlocked(g_MpArenas[i].requirefeature)) {
+	for (i = 31; i < 35; i++) {
+		if (challengeIsFeatureUnlocked(g_MpArenas[i].requirefeature)) {
 			if (index == 0) {
 				return g_MpArenas[i].stagenum;
 			}
@@ -484,10 +445,8 @@ MenuItemHandlerResult mpArenaMenuHandler(s32 operation, struct menuitem *item, u
 #else // All Solos in Multi Mod
 		{ 13, L_OPTIONS_117 }, // "Solo Missions"
 		{ 27, L_MPMENU_117  }, // "Classic"
-		{ 32, MD_MPSTAGE_TEXT_GROUP_GOLDENEYE_X       }, // "GoldenEye X"
-		{ 43, MD_MPSTAGE_TEXT_GROUP_GOLDENEYE_X_BONUS }, // "GoldenEye X Bonus"
-		{ 55, MD_MPSTAGE_TEXT_GROUP_BONUS             }, // "Bonus"
-		{ 71, L_MPMENU_118  }, // "Random"
+		{ 31, MD_MPSTAGE_TEXT_GROUP_GOLDENEYE_X }, // "GoldenEye X"
+		{ 35, L_MPMENU_118  }, // "Random"
 #endif
 	};
 
@@ -544,7 +503,7 @@ MenuItemHandlerResult mpArenaMenuHandler(s32 operation, struct menuitem *item, u
 #ifdef PLATFORM_N64
 		data->list.value = 3;
 #else // All Solos in Multi Mod
-		data->list.value = 7;
+		data->list.value = 4;
 #endif
 
 #ifdef PLATFORM_N64 // All Solos in Multi Mod
@@ -6518,9 +6477,7 @@ struct lmspreset {
 
 static const struct lmsstageentry g_LmsStageEntries[] = {
 	{ STAGE_EXTRA6, 0, "Temple GE64" },
-	{ STAGE_EXTRA2, 0, "Complex GE64" },
 	{ STAGE_EXTRA15, 0, "Stack GE64" },
-	{ STAGE_EXTRA10, 0, "Facility GE64" },
 	{ STAGE_EXTRA4, MD_MPSTAGE_TEXT_ARCHIVES, NULL },
 	{ STAGE_MP_SKEDAR, 0, "Skedar" },
 	{ STAGE_MP_PIPES, 0, "Pipes" },
@@ -6552,42 +6509,8 @@ static const struct lmsstageentry g_LmsStageEntries[] = {
 	{ STAGE_MP_TEMPLE, 0, "Temple" },
 	{ STAGE_MP_COMPLEX, 0, "Complex" },
 	{ STAGE_TEST_MP6, MD_MPSTAGE_TEXT_CAVES, NULL },
-	{ STAGE_TEST_MP2, 0, "Stack" },
 	{ STAGE_MP_FELICITY, 0, "Felicity" },
 	{ STAGE_EXTRA8, 0, "Caves GE64" },
-	{ STAGE_EXTRA9, MD_MPSTAGE_TEXT_LIBRARY, NULL },
-	{ STAGE_EXTRA13, MD_MPSTAGE_TEXT_BASEMENT, NULL },
-	{ STAGE_EXTRA11, MD_MPSTAGE_TEXT_BUNKER, NULL },
-	{ STAGE_EXTRA12, MD_MPSTAGE_TEXT_CAVERNS, NULL },
-	{ STAGE_EXTRA14, MD_MPSTAGE_TEXT_EGYPTIAN, NULL },
-	{ STAGE_TEST_MP17, MD_MPSTAGE_TEXT_FACILITY_BZ, NULL },
-	{ STAGE_EXTRA1, MD_MPSTAGE_TEXT_FRIGATE, NULL },
-	{ STAGE_TEST_SILO, MD_MPSTAGE_TEXT_ARCHIVES_1F, NULL },
-	{ STAGE_TEST_MP16, MD_MPSTAGE_TEXT_ARCHIVES_BZ, NULL },
-	{ STAGE_TEST_MP14, MD_MPSTAGE_TEXT_STREETS, NULL },
-	{ STAGE_EXTRA3, MD_MPSTAGE_TEXT_TRAIN, NULL },
-	{ STAGE_TEST_MP18, MD_MPSTAGE_TEXT_CRADLE, NULL },
-	{ STAGE_EXTRA5, MD_MPSTAGE_TEXT_AZTEC, NULL },
-	{ STAGE_TEST_MP20, MD_MPSTAGE_TEXT_CITADEL, NULL },
-	{ STAGE_TEST_MP19, MD_MPSTAGE_TEXT_LABYRINTH, NULL },
-	{ STAGE_EXTRA7, MD_MPSTAGE_TEXT_ICICLE_PYRAMID, NULL },
-	{ STAGE_TEST_MP8, MD_MPSTAGE_TEXT_CLIFF_BASE, NULL },
-	{ STAGE_24, MD_MPSTAGE_TEXT_KAKARIKO_VILLAGE, NULL },
-	{ STAGE_TEST_MP7, MD_MPSTAGE_TEXT_DARK_NOON_VALLEY, NULL },
-	{ STAGE_TEST_ARCH, MD_MPSTAGE_TEXT_SUBURB, NULL },
-	{ STAGE_TEST_DEST, MD_MPSTAGE_TEXT_TRAINING_DAY, NULL },
-	{ STAGE_EXTRA16, MD_MPSTAGE_TEXT_RUNWAY, NULL },
-	{ STAGE_EXTRA17, MD_MPSTAGE_TEXT_CONTROL, NULL },
-	{ STAGE_EXTRA18, MD_MPSTAGE_TEXT_TAWFRET_RUINS, NULL },
-	{ STAGE_EXTRA19, MD_MPSTAGE_TEXT_TARGITZANS_TEMPLE, NULL },
-	{ STAGE_EXTRA20, MD_MPSTAGE_TEXT_JUNKYARD, NULL },
-	{ STAGE_EXTRA21, MD_MPSTAGE_TEXT_STEEL_MILL, NULL },
-	{ STAGE_EXTRA22, MD_MPSTAGE_TEXT_MALL, NULL },
-	{ STAGE_EXTRA23, MD_MPSTAGE_TEXT_TUNNELS, NULL },
-	{ STAGE_EXTRA24, MD_MPSTAGE_TEXT_ROGUE, NULL },
-	{ STAGE_EXTRA25, MD_MPSTAGE_TEXT_PARADOX, NULL },
-	{ STAGE_EXTRA26, MD_MPSTAGE_TEXT_WAR_COLORS, NULL },
-	{ STAGE_TEST_LAM, MD_MPSTAGE_TEXT_GRAND_LIBRARY, NULL },
 };
 
 static char *lmsStageEntryGetLabel(const struct lmsstageentry *entry)

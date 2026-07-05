@@ -23,7 +23,7 @@ static u32 ringWritePos = 0;
 static u32 ringBytesUsed = 0;
 static u32 staleAudioDiscardWarnings = 0;
 
-static s32 bufferSize = 2048;
+static s32 bufferSize = 1024;
 static s32 queueLimit = 8192;
 
 static void audioDiscardOldest(u32 bytes)

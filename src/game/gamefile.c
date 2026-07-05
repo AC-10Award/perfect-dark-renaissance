@@ -166,6 +166,10 @@ void gamefileLoadDefaults(struct gamefile *file)
 	pakClearAllBitflags(file->flags);
 
 #ifndef PLATFORM_N64
+	// Renaissance is multiplayer-focused, so new profiles start with every
+	// Combat Simulator feature available without completing the challenges.
+	pakSetBitflag(GAMEFILEFLAG_MP_ONLY_UNLOCKS, file->flags, true);
+
 	// override with PC controls if enabled in the config
 	if (g_PlayerExtCfg[0].extcontrols) {
 		optionsSetControlMode(player1, CONTROLMODE_PC);

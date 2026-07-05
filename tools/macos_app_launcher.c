@@ -95,17 +95,11 @@ int main(int argc, char **argv)
 	char basedir[PATH_MAX];
 	char moddir[PATH_MAX];
 	char gexmoddir[PATH_MAX];
-	char kakarikomoddir[PATH_MAX];
-	char darknoonmoddir[PATH_MAX];
-	char goldfinger64moddir[PATH_MAX];
 
 	snprintf(bundle_binary, sizeof(bundle_binary), "%s/pd.arm64", dirname(resolved_path));
 	snprintf(basedir, sizeof(basedir), "%s/data", project_root);
 	snprintf(moddir, sizeof(moddir), "%s/mods/mod_allinone", project_root);
 	snprintf(gexmoddir, sizeof(gexmoddir), "%s/mods/mod_gex", project_root);
-	snprintf(kakarikomoddir, sizeof(kakarikomoddir), "%s/mods/mod_kakariko", project_root);
-	snprintf(darknoonmoddir, sizeof(darknoonmoddir), "%s/mods/mod_dark_noon", project_root);
-	snprintf(goldfinger64moddir, sizeof(goldfinger64moddir), "%s/mods/mod_goldfinger_64", project_root);
 
 	if (!file_exists(bundle_binary)) {
 		show_alert("Missing bundled pd.arm64 link. Rebuild the app wrapper before launching.");
@@ -126,12 +120,6 @@ int main(int argc, char **argv)
 	child_argv[i++] = moddir;
 	child_argv[i++] = "--gexmoddir";
 	child_argv[i++] = gexmoddir;
-	child_argv[i++] = "--kakarikomoddir";
-	child_argv[i++] = kakarikomoddir;
-	child_argv[i++] = "--darknoonmoddir";
-	child_argv[i++] = darknoonmoddir;
-	child_argv[i++] = "--goldfinger64moddir";
-	child_argv[i++] = goldfinger64moddir;
 
 	for (int argi = 1; argi < argc; ++argi) {
 		child_argv[i++] = argv[argi];

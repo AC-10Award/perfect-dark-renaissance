@@ -5,7 +5,8 @@ Perfect Dark Renaissance exists because of years of work by the Perfect Dark, Go
 ## Perfect Dark Renaissance
 
 - Development and release preparation: Beyond Synth
-- Additional maps and community work: Oodark, Oofjay, MrKane, Sogun, Garabuyo, Trevor, Comet, TimeH, and EternallyAries
+- Retained solo-to-multiplayer conversions: 00dark
+- Retained GoldenEye X arenas and related map work: Wreck and 00Action
 
 ## Foundations
 
@@ -27,4 +28,3 @@ Perfect Dark Renaissance exists because of years of work by the Perfect Dark, Go
 - Everyone who submitted fixes, testing, research, maps, tools, documentation, or issue reports to the projects above.
 
 This list is intended as a good-faith acknowledgement and may be expanded when additional contributors are identified.
-

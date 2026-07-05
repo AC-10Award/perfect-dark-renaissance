@@ -71,9 +71,6 @@ Run the resulting executable from the repository root with these mod-directory a
 ```text
 --moddir ./mods/mod_allinone
 --gexmoddir ./mods/mod_gex
---kakarikomoddir ./mods/mod_kakariko
---darknoonmoddir ./mods/mod_dark_noon
---goldfinger64moddir ./mods/mod_goldfinger_64
 ```
 
 Windows packaging and runtime behavior should be verified on an actual Windows system before publishing a Windows release.
@@ -114,6 +111,16 @@ Users can provide personal MP3 replacements without rebuilding the game. See [th
 
 Bundled replacement sound effects and implementation notes are documented in [ext_sfx/README.txt](ext_sfx/README.txt). Do not redistribute music or sound files unless you have permission to do so.
 
+If native music is choppy or audio latency is uncomfortable, quit the game and adjust
+`BufferSize` or `QueueLimit` under `[Audio]` in `pd.ini`, then restart. Larger queues can
+reduce choppiness at the cost of additional latency. The default values are:
+
+```ini
+[Audio]
+BufferSize=1024
+QueueLimit=8192
+```
+
 ## Project lineage
 
 Perfect Dark Renaissance is built upon:
@@ -128,4 +135,3 @@ See [CREDITS.md](CREDITS.md) for fuller acknowledgements.
 ## Licence
 
 The inherited port source is distributed under the MIT licence in [LICENSE](LICENSE). That licence does not grant rights to Nintendo, Rare, Microsoft, Perfect Dark, GoldenEye, or other third-party game assets and trademarks. See [NOTICE.md](NOTICE.md).
-
