@@ -1,0 +1,7 @@
+event,material_category,stage_scope,legacy_texture_ids,code_owner,sfx_group,texture_group,status,notes
+custom_body_hit,body,any,N/A,src/game/chr.c,body_hit,blood_hit_side|blood_hit_front,ACTIVE_DOC,SFX pool is native-owned; blood visuals still follow existing character hit logic
+termination_metal_hit,metal,Termination mode,N/A,src/game/chraction.c,metal_hit,spark_floor|smoke_puff,ACTIVE_DOC,SFX pool is native-owned; future registry should own Termination material profile directly
+custom_background_metal_hit,metal,STAGE_EXTRA15,0x007f|0x007d,src/game/prop.c,metal_hit,spark_floor|smoke_puff,ACTIVE_DOC,Currently hard-coded stage and texture-id match
+custom_background_wall_hit,wall,STAGE_EXTRA15,0x0088,src/game/prop.c,wall_hit|dust,wall_hit_front|wall_hit_side,ACTIVE_DOC,Spawns front and side cross-plane overlays and plays randomized wall plus dust SFX
+breakable_tile_hit,tile,any,N/A,src/game/bg.c,material_hit,smoke_puff|unclassified_effect,ACTIVE_DOC,SFX is native-owned; damaged geometry and puff visuals remain legacy-code driven
+mp_door_destruction_debris,door_debris,multiplayer,N/A,src/game/propobj.c,destruction,spark_floor|unclassified_effect,ACTIVE_DOC,SFX is native-owned; debris sparks remain legacy-code driven

@@ -1,0 +1,9 @@
+# Dark Noon Mod for All in One Mod v3
+# Author: Jonaeru / Atari-Dude
+
+# Dark Noon by MRKane
+
+# Revision History
+# v2: Replaced Skedar and Dr. Carroll Models last version by Wreck. Thank you so much, Wreck.
+#     Merged Atari-Dude mod files (April 10, 2025)
+# v3: Merged Atari-Dude mod files (July 20, 2025)

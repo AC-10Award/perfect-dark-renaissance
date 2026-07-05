@@ -1,0 +1,32 @@
+alias,filename,event_group,current_trigger,status,notes
+MD_SFX_FALCON_SILENCER_TOGGLE,SFX_0022_falcon_silencer_toggle.wav,weapon_function,Falcon/DMC function toggle,ACTIVE_FILE,Falls back to stock SFX_0022 if external playback fails
+MD_SFX_MATRIX85_FIRE,gun-shot-matrix85-01.wav,weapon_fire,Matrix-85 fire,ACTIVE_FILE,Replaces stock MagSec 4 shot sound when external playback succeeds
+MD_SFX_BODY_HIT_01,bullet_body_hit_01.wav,body_hit,Custom bot body hit pool,ACTIVE_FILE,Randomized with body hit pool
+MD_SFX_BODY_HIT_02,bullet_body_hit_02.wav,body_hit,Custom bot body hit pool,ACTIVE_FILE,Randomized with body hit pool
+MD_SFX_BODY_HIT_03,bullet_body_hit_03.wav,body_hit,Custom bot body hit pool,ACTIVE_FILE,Randomized with body hit pool
+MD_SFX_METAL_HIT_01,bullet_metal_hit_01.wav,metal_hit,Termination and custom metal hit pool,ACTIVE_FILE,Randomized with metal hit pool
+MD_SFX_METAL_HIT_02,bullet_metal_hit_02.wav,metal_hit,Termination and custom metal hit pool,ACTIVE_FILE,Randomized with metal hit pool
+MD_SFX_METAL_HIT_03,bullet_metal_hit_03.wav,metal_hit,Termination and custom metal hit pool,ACTIVE_FILE,Randomized with metal hit pool
+MD_SFX_METAL_HIT_04,bullet_metal_hit_04.wav,metal_hit,Termination and custom metal hit pool,ACTIVE_FILE,Randomized with metal hit pool
+MD_SFX_METAL_HIT_05,bullet_metal_hit_05.wav,metal_hit,Termination and custom metal hit pool,ACTIVE_FILE,Randomized with metal hit pool
+MD_SFX_METAL_HIT_06,bullet_metal_hit_06.wav,metal_hit,Termination and custom metal hit pool,ACTIVE_FILE,Randomized with metal hit pool
+MD_SFX_TILE_HIT_01,tile_hit_01.wav,material_hit,Breakable tile hit,ACTIVE_FILE,Single external WAV trigger
+MD_SFX_WALL_HIT_01,wall_hit_01.wav,wall_hit,Stack GE64 wall hit,ACTIVE_FILE,Randomized with wall hit pool
+MD_SFX_WALL_HIT_02,wall_hit_02.wav,wall_hit,Stack GE64 wall hit,ACTIVE_FILE,Randomized with wall hit pool
+MD_SFX_WALL_HIT_03,wall_hit_03.wav,wall_hit,Stack GE64 wall hit,ACTIVE_FILE,Randomized with wall hit pool
+MD_SFX_WALL_HIT_04,wall_hit_04.wav,wall_hit,Stack GE64 wall hit,ACTIVE_FILE,Randomized with wall hit pool
+MD_SFX_WALL_HIT_05,wall_hit_05.wav,wall_hit,Stack GE64 wall hit,ACTIVE_FILE,Randomized with wall hit pool
+MD_SFX_WALL_HIT_06,wall_hit_06.wav,wall_hit,Stack GE64 wall hit,ACTIVE_FILE,Randomized with wall hit pool
+MD_SFX_WALL_HIT_07,wall_hit_07.wav,wall_hit,Stack GE64 wall hit,ACTIVE_FILE,Randomized with wall hit pool
+MD_SFX_WALL_HIT_08,wall_hit_08.wav,wall_hit,Stack GE64 wall hit,ACTIVE_FILE,Randomized with wall hit pool
+MD_SFX_WALL_HIT_09,wall_hit_09.wav,wall_hit,Stack GE64 wall hit,ACTIVE_FILE,Randomized with wall hit pool
+MD_SFX_WALL_HIT_10,wall_hit_10.wav,wall_hit,Stack GE64 wall hit,ACTIVE_FILE,Randomized with wall hit pool
+MD_SFX_WALL_HIT_11,wall_hit_11.wav,wall_hit,Stack GE64 wall hit,ACTIVE_FILE,Randomized with wall hit pool
+MD_SFX_WALL_HIT_12,wall_hit_12.wav,wall_hit,Stack GE64 wall hit,ACTIVE_FILE,Randomized with wall hit pool
+MD_SFX_WALL_HIT_13,wall_hit_13.wav,wall_hit,Stack GE64 wall hit,ACTIVE_FILE,Randomized with wall hit pool
+MD_SFX_WALL_HIT_14,wall_hit_14.wav,wall_hit,Stack GE64 wall hit,ACTIVE_FILE,Randomized with wall hit pool
+MD_SFX_DUST_01,dust_01.wav,dust,Stack GE64 wall hit dust layer,ACTIVE_FILE,Randomized with dust pool
+MD_SFX_DUST_02,dust_02.wav,dust,Stack GE64 wall hit dust layer,ACTIVE_FILE,Randomized with dust pool
+MD_SFX_DUST_03,dust_03.wav,dust,Stack GE64 wall hit dust layer,ACTIVE_FILE,Randomized with dust pool
+MD_SFX_DUST_04,dust_04.wav,dust,Stack GE64 wall hit dust layer,ACTIVE_FILE,Randomized with dust pool
+MD_SFX_DOOR_EXPLOSION_DEBRIS,door_explosion_debris.wav,destruction,MP door destruction debris,ACTIVE_FILE,Single external WAV trigger

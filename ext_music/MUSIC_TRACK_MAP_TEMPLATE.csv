@@ -1,0 +1,74 @@
+event_key,track_type,context_or_source,original_filename,CURRENT FILENAME,New UI Track Entry,notes
+opening_company_logos,PRIMARY,startup logos,opening_company_logos.mp3,,,One-off startup/logo music slot
+main_title_logo,PRIMARY,title logo intro,main_title_logo.mp3,,,One-off title-logo music slot
+main_menu,MENU,main menu,main_menu.mp3,,,Legacy menu.mp3 still accepted
+combat_sim_menu,MENU,combat simulator menu,combat_sim_menu.mp3,,,MP setup/menu music slot
+termination_menu,MENU,termination level select,termination_menu.mp3 or termination_menu_01.mp3,,,Termination Mode level-select menu cue
+combat_sim_complete,MENU,match over / multiplayer stats screen,combat_sim_complete.mp3,,,Post-match results music slot
+last_man_standing_win,CUSTOM_RESULT,Last Man Standing win result,last_man_standing_win.mp3 or last_man_standing_win_01.mp3,,,Perfect Dark Renaissance custom result cue
+last_man_standing_lose,CUSTOM_RESULT,Last Man Standing lose result,last_man_standing_lose.mp3 or last_man_standing_lose_01.mp3,,,Perfect Dark Renaissance custom result cue
+termination_win,CUSTOM_RESULT,Termination win result,termination_win.mp3 or termination_win_01.mp3,,,Termination custom result cue
+termination_lose,CUSTOM_RESULT,Termination lose result,termination_lose.mp3 or termination_lose_01.mp3,,,Termination custom result cue
+multiplayer_death,DEATH,multiplayer death sting,multiplayer_death.mp3 or multiplayer_death_01.mp3,,,Supports future randomized pool
+mp_track_ci_operative,MENU,MP Music Select: CI Operative,mp_track_ci_operative.mp3,,,Visible UI text can stay stock for now
+mp_track_skedar_mystery,MENU,MP Music Select: Skedar Mystery,mp_track_skedar_mystery.mp3,,,Visible UI text can stay stock for now
+mp_track_dark_combat,MENU,MP Music Select: Dark Combat,mp_track_dark_combat.mp3,,,Visible UI text can stay stock for now
+mp_track_datadyne_action,MENU,MP Music Select: dataDyne Action,mp_track_datadyne_action.mp3,,,Visible UI text can stay stock for now
+mp_track_maian_tears,MENU,MP Music Select: Maian Tears,mp_track_maian_tears.mp3,,,Visible UI text can stay stock for now
+mp_track_alien_conflict,MENU,MP Music Select: Alien Conflict,mp_track_alien_conflict.mp3,,,Visible UI text can stay stock for now
+mp_track_carrington_institute,MENU,MP Music Select: CI,mp_track_carrington_institute.mp3,,,Visible UI text can stay stock for now
+mp_track_dd_central,MENU,MP Music Select: Defection,mp_track_dd_central.mp3,,,Visible UI text can stay stock for now
+mp_track_dd_central_x,MENU,MP Music Select: Defection X,mp_track_dd_central_x.mp3,,,Visible UI text can stay stock for now
+mp_track_dd_research,MENU,MP Music Select: Investigation,mp_track_dd_research.mp3,,,Visible UI text can stay stock for now
+mp_track_dd_extraction,MENU,MP Music Select: Extraction,mp_track_dd_extraction.mp3,,,Visible UI text can stay stock for now
+mp_track_dd_research_x,MENU,MP Music Select: Investigation X,mp_track_dd_research_x.mp3,,,Visible UI text can stay stock for now
+mp_track_carrington_villa,MENU,MP Music Select: Villa,mp_track_carrington_villa.mp3,,,Visible UI text can stay stock for now
+mp_track_carrington_villa_x,MENU,MP Music Select: Villa X,mp_track_carrington_villa_x.mp3,,,Visible UI text can stay stock for now
+mp_track_air_force_one_x,MENU,MP Music Select: Air Force One X,mp_track_air_force_one_x.mp3,,,Visible UI text can stay stock for now
+mp_track_dd_extraction_x,MENU,MP Music Select: Extraction X,mp_track_dd_extraction_x.mp3,,,Visible UI text can stay stock for now
+mp_track_chicago_x,MENU,MP Music Select: Chicago X,mp_track_chicago_x.mp3,,,Visible UI text can stay stock for now
+mp_track_g5_building,MENU,MP Music Select: G5,mp_track_g5_building.mp3,,,Visible UI text can stay stock for now
+mp_track_g5_building_x,MENU,MP Music Select: G5 X,mp_track_g5_building_x.mp3,,,Visible UI text can stay stock for now
+mp_track_a51_infiltration,MENU,MP Music Select: Infiltration,mp_track_a51_infiltration.mp3,,,Visible UI text can stay stock for now
+mp_track_a51_rescue_x,MENU,MP Music Select: Rescue X,mp_track_a51_rescue_x.mp3,,,Visible UI text can stay stock for now
+mp_track_air_force_one,MENU,MP Music Select: Air Force One,mp_track_air_force_one.mp3,,,Visible UI text can stay stock for now
+mp_track_pelagic_ii,MENU,MP Music Select: Pelagic II,mp_track_pelagic_ii.mp3,,,Visible UI text can stay stock for now
+mp_track_a51_infiltration_x,MENU,MP Music Select: Infiltration X,mp_track_a51_infiltration_x.mp3,,,Visible UI text can stay stock for now
+mp_track_a51_escape_x,MENU,MP Music Select: Escape X,mp_track_a51_escape_x.mp3,,,Visible UI text can stay stock for now
+mp_track_air_base,MENU,MP Music Select: Airbase,mp_track_air_base.mp3,,,Visible UI text can stay stock for now
+mp_track_air_base_x,MENU,MP Music Select: Airbase X,mp_track_air_base_x.mp3,,,Visible UI text can stay stock for now
+mp_track_crash_site,MENU,MP Music Select: Crash Site,mp_track_crash_site.mp3,,,Visible UI text can stay stock for now
+mp_track_crash_site_x,MENU,MP Music Select: Crash Site X,mp_track_crash_site_x.mp3,,,Visible UI text can stay stock for now
+mp_track_a51_rescue,MENU,MP Music Select: Rescue,mp_track_a51_rescue.mp3,,,Visible UI text can stay stock for now
+mp_track_a51_escape,MENU,MP Music Select: Escape,mp_track_a51_escape.mp3,,,Visible UI text can stay stock for now
+mp_track_chicago,MENU,MP Music Select: Chicago,mp_track_chicago.mp3,,,Visible UI text can stay stock for now
+mp_track_pelagic_ii_x,MENU,MP Music Select: Pelagic II X,mp_track_pelagic_ii_x.mp3,,,Visible UI text can stay stock for now
+mp_track_deep_sea,MENU,MP Music Select: Deep Sea,mp_track_deep_sea.mp3,,,Visible UI text can stay stock for now
+mp_track_deep_sea_x,MENU,MP Music Select: Deep Sea X,mp_track_deep_sea_x.mp3,,,Visible UI text can stay stock for now
+mp_track_institute_defense,MENU,MP Music Select: Defense,mp_track_institute_defense.mp3,,,Visible UI text can stay stock for now
+mp_track_institute_defense_x,MENU,MP Music Select: Defense X,mp_track_institute_defense_x.mp3,,,Visible UI text can stay stock for now
+mp_track_attack_ship,MENU,MP Music Select: Attack Ship,mp_track_attack_ship.mp3,,,Visible UI text can stay stock for now
+mp_track_attack_ship_x,MENU,MP Music Select: Attack Ship X,mp_track_attack_ship_x.mp3,,,Visible UI text can stay stock for now
+mp_track_skedar_ruins,MENU,MP Music Select: Skedar Ruins,mp_track_skedar_ruins.mp3,,,Visible UI text can stay stock for now
+mp_track_skedar_ruins_x,MENU,MP Music Select: Skedar Ruins X,mp_track_skedar_ruins_x.mp3,,,Visible UI text can stay stock for now
+mp_track_end_credits,MENU,MP Music Select: Credits,mp_track_end_credits.mp3,,,Visible UI text can stay stock for now
+mp_track_skedar_warrior,MENU,MP Music Select: Skedar Warrior,mp_track_skedar_warrior.mp3,,,Visible UI text can stay stock for now
+mission_success,RESULT,mission success result,mission_success.mp3,,,Original mission result music slot
+mission_unknown,RESULT,mission unknown result,mission_unknown.mp3,,,Original mission result music slot
+mission_failed,RESULT,mission failed result,mission_failed.mp3,,,Original mission result music slot
+pause_menu,MENU,pause menu,pause_menu.mp3,,,Original pause-menu music slot
+solo_death,DEATH,solo death sting,solo_death.mp3,,,Original solo death music slot
+ci_training,MUSIC,Carrington Institute training cue,ci_training.mp3,,,Original CI training music cue
+ambient_dd_tower_sfx,AMBIENCE,dataDyne tower environmental bed,not wired yet,,,Reserved background ambience key distinct from music and SFX
+ambient_investigation_sfx,AMBIENCE,Investigation environmental bed,not wired yet,,,Reserved background ambience key distinct from music and SFX
+ambient_ocean,AMBIENCE,ocean background bed,not wired yet,,,Reserved background ambience key distinct from music and SFX
+ambient_traffic,AMBIENCE,traffic background bed,not wired yet,,,Reserved background ambience key distinct from music and SFX
+ambient_infiltration_sfx,AMBIENCE,Infiltration environmental bed,not wired yet,,,Reserved background ambience key distinct from music and SFX
+ambient_a51_loudspeaker_1,AMBIENCE,Area 51 loudspeaker bed 1,not wired yet,,,Reserved background ambience key distinct from music and SFX
+ambient_a51_loudspeaker_2,AMBIENCE,Area 51 loudspeaker bed 2,not wired yet,,,Reserved background ambience key distinct from music and SFX
+ambient_wind,AMBIENCE,wind background bed,not wired yet,,,Reserved background ambience key distinct from music and SFX
+ambient_air_force_one_sfx,AMBIENCE,Air Force One environmental bed,not wired yet,,,Reserved background ambience key distinct from music and SFX
+ambient_crash_site_wind,AMBIENCE,Crash Site wind background bed,not wired yet,,,Reserved background ambience key distinct from music and SFX
+ambient_deep_sea_sfx,AMBIENCE,Deep Sea environmental bed,not wired yet,,,Reserved background ambience key distinct from music and SFX
+ambient_attack_ship_sfx,AMBIENCE,Attack Ship environmental bed,not wired yet,,,Reserved background ambience key distinct from music and SFX
+ambient_skedar_wind,AMBIENCE,Skedar wind background bed,not wired yet,,,Reserved background ambience key distinct from music and SFX

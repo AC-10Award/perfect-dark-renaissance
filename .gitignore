@@ -1,0 +1,68 @@
+# macOS/local noise
+.DS_Store
+.AppleDouble
+.LSOverride
+*.swp
+*.swo
+*~
+__pycache__/
+*.pyc
+
+# Build outputs and CMake caches
+/build/
+/build.*/
+/build.pre-*/
+/CMakeFiles/
+/CMakeCache.txt
+/cmake_install.cmake
+/compile_commands.json
+/CMakeUserPresets.json
+/Makefile
+/.ninja_deps
+/.ninja_log
+/build.ninja
+*.o
+*.d
+*.a
+*.arm64
+*.x86_64
+*.i686
+*.exe
+*.dll
+*.dSYM/
+
+# Runtime logs and generated stress-test logs
+*.log
+/pd.log
+/buildlog.txt
+/Stress Test Gamelogs/
+*.crash
+core
+core.*
+
+# Local runtime outputs / ROM images
+*.z64
+*.n64
+*.v64
+*.rom
+*.gbc
+
+# Local save data and runtime configuration
+*.eep
+*.sra
+*.fla
+*.sav
+/pd.ini
+
+# User-provided custom music (documentation and templates remain tracked)
+/ext_music/**/*.mp3
+/ext_music/**/*.ogg
+/ext_music/**/*.flac
+/ext_music/**/*.m4a
+
+# App bundle build artifacts
+/*.app/
+
+# Local editor/project files
+.vscode/
+.idea/

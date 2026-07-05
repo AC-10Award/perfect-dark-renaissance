@@ -1,0 +1,6 @@
+character_slot,display_name,head_source,body_source,scope,original_texture_id,replacement_texture_id,ext_tex_path,apply_to_hands,shared_texture,notes
+MPBODY_DD_SECGUARD,dataDyne Security Elite,HEAD_DD_SHOCK,BODY_AREA51TROOPER,head,055d,22ab,ext_tex/22ab.png,no,no,example row
+MPBODY_DD_SECGUARD,dataDyne Security Elite,HEAD_DD_SHOCK,BODY_AREA51TROOPER,head,02ff,22ac,ext_tex/22ac.png,no,no,example row
+MPBODY_DD_SECGUARD,dataDyne Security Elite,HEAD_DD_SHOCK,BODY_AREA51TROOPER,head,00ef,34dd,ext_tex/34dd.png,no,no,example row
+MPBODY_DD_SECGUARD,dataDyne Security Elite,HEAD_DD_SHOCK,BODY_AREA51TROOPER,body,0142,4100,ext_tex/4100.png,no,no,example row
+MPBODY_DD_SECGUARD,dataDyne Security Elite,HEAD_DD_SHOCK,BODY_AREA51TROOPER,body,0143,4101,ext_tex/4101.png,no,no,example row

@@ -1,0 +1,44 @@
+# Kakariko Village Mod for All in One Mod v4
+# Author: Jonaeru / Atari-Dude
+
+# Kakariko Village by Sogun
+# http://n64vault.com/pd-multi-levels:kakariko-village
+
+# Golden Nintendo Maps by Sogun
+# http://n64vault.com/ge-multi-levels:nintendo-classic-maps
+
+# Revision History
+# v1: Fixed some textures. Thank you so much, Atari-Dude. (Novenber 3, 2024)
+#     Added models for coexistence with Perfect Dark Plus Mod
+#     - Ccarroll2Z (Dr. Caroll Body/Head File)
+#     - Cskedar2Z (Skedar Body/Head File)
+#     - Ghand_carollZ (Dr. Caroll Hand File)
+#     - Ghand_skedarZ (Skedar Hand File)
+#     - CheadgreyZ (Joanna Dark (JP version))
+#     - Gm16Z (AR53 (AR33))
+#     - Gmp5kZ (DMC (D5K))
+#     - GskorpionZ (KLO1313 (KLOBB))
+# v2: Fixed doorknobs and pot tops models and bgdata. Thank you so much, Atari-Dude. (Novenber 29, 2024)
+# v3: Replaced Skedar and Dr. Carroll Models last version by Wreck. Thank you so much, Wreck.
+#     Merged Atari-Dude mod files (April 10, 2025)
+# v4: Merged Atari-Dude mod files (July 20, 2025)
+
+stage 0x24 {
+  bgfile "bgdata/bg_mp20.seg"
+  tilesfile "bgdata/bg_mp20_tilesZ"
+  padsfile "bgdata/bg_mp20_padsZ"
+  setupfile "Usetupmp20Z"
+  mpsetupfile "Ump_setupmp20Z"
+  allocation "-ml0 -me0 -mgfx200 -mvtx200 -ma400"
+  weather {
+    exclude_rooms {
+      clear
+      0x05 0x06 0x07 0x08 0x0A 0x0B 0x0C 0x0D
+      0x37 0x5B 0x5F 0x60 0x5D 0x1D 0x1F 0x27
+      0x50 0x2C 0x2F 0x30 0x11 0x24 0x33 0x34
+      0x35 0x36 0x3C 0x46 0x47 0x49 0x55 0x56
+      0x5E 0x63 0x69 0x0D 0x16 0x4F 0x4B 0x3F
+      0x13 0x19
+    }
+  }
+}

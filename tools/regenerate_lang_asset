@@ -1,0 +1,188 @@
+#!/usr/bin/env python3
+
+import argparse
+import os
+import subprocess
+import sys
+
+
+LANG_TO_FILE_SUFFIX = {
+    "en": "E",
+    "gb": "P",
+    "jp": "J",
+    "fr": "_str_f",
+    "de": "_str_g",
+    "it": "_str_i",
+    "es": "_str_s",
+}
+
+FILE_SUFFIX_TO_LANG = {value: key for key, value in LANG_TO_FILE_SUFFIX.items()}
+
+DEFAULT_MOD_DIRS = (
+    "mods/mod_allinone",
+    "mods/mod_gex",
+)
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description=(
+            "Regenerate packed language files from src/assets/<romid>/lang/*.json. "
+            "Perfect Dark Renaissance's active migration target is English NTSC; other languages "
+            "are legacy compatibility unless explicitly requested."
+        )
+    )
+    parser.add_argument(
+        "banks",
+        nargs="*",
+        help="language bank basename such as gun, mpweapons, mpmenu, options, or misc",
+    )
+    parser.add_argument("--romid", default="ntsc-final", help="asset ROM id to read from")
+    parser.add_argument(
+        "--moddir",
+        action="append",
+        dest="moddirs",
+        help="mod directory to update; may be passed more than once",
+    )
+    parser.add_argument(
+        "--lang",
+        action="append",
+        dest="langs",
+        choices=sorted(LANG_TO_FILE_SUFFIX),
+        help="language key to update; may be passed more than once; prefer --lang en for active migration work",
+    )
+    parser.add_argument(
+        "--create-missing",
+        action="store_true",
+        help="write all E/P/J files for requested banks instead of only files that already exist",
+    )
+    parser.add_argument(
+        "--existing",
+        action="store_true",
+        help="allow updating all existing live payloads when no bank names are provided",
+    )
+    return parser.parse_args()
+
+
+def repo_root():
+    return os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def parse_live_lang_file(filename):
+    if not filename.startswith("L"):
+        return None
+
+    stem = filename[1:]
+
+    for suffix in sorted(FILE_SUFFIX_TO_LANG, key=len, reverse=True):
+        if stem.endswith(suffix):
+            bank = stem[: -len(suffix)]
+
+            if bank:
+                return bank, FILE_SUFFIX_TO_LANG[suffix], filename
+
+    return None
+
+
+def discover_existing_targets(repo, moddirs, selected_banks, selected_langs):
+    targets = []
+    selected = set(selected_banks) if selected_banks else None
+    langs = set(selected_langs) if selected_langs else None
+
+    for moddir in moddirs:
+        files_dir = os.path.join(repo, moddir, "files")
+        if not os.path.isdir(files_dir):
+            print(f"skipping missing files directory: {files_dir}", file=sys.stderr)
+            continue
+
+        for filename in sorted(os.listdir(files_dir)):
+            parsed = parse_live_lang_file(filename)
+
+            if not parsed:
+                continue
+
+            bank, lang_key, _ = parsed
+
+            if selected and bank not in selected:
+                continue
+
+            if langs and lang_key not in langs:
+                continue
+
+            targets.append((moddir, bank, lang_key, filename))
+
+    return targets
+
+
+def make_requested_targets(moddirs, banks, selected_langs):
+    targets = []
+    langs = selected_langs or ("en", "gb", "jp")
+
+    for moddir in moddirs:
+        for bank in banks:
+            for lang_key in langs:
+                filename = f"L{bank}{LANG_TO_FILE_SUFFIX[lang_key]}"
+                targets.append((moddir, bank, lang_key, filename))
+
+    return targets
+
+
+def validate_sources(repo, romid, banks):
+    missing = []
+
+    for bank in sorted(set(banks)):
+        source = os.path.join(repo, "src", "assets", romid, "lang", f"{bank}.json")
+
+        if not os.path.isfile(source):
+            missing.append(source)
+
+    if missing:
+        for source in missing:
+            print(f"missing source language file: {source}", file=sys.stderr)
+        return False
+
+    return True
+
+
+def main():
+    args = parse_args()
+    repo = repo_root()
+    mklang = os.path.join(repo, "tools", "assetmgr", "mklang")
+    moddirs = args.moddirs or DEFAULT_MOD_DIRS
+
+    if args.create_missing:
+        if not args.banks:
+            print("--create-missing requires at least one bank name", file=sys.stderr)
+            return 1
+
+        targets = make_requested_targets(moddirs, args.banks, args.langs)
+    else:
+        if not args.banks and not args.existing:
+            print("provide at least one bank name, or pass --existing to update every existing live payload", file=sys.stderr)
+            return 1
+
+        targets = discover_existing_targets(repo, moddirs, args.banks, args.langs)
+
+    if not targets:
+        print("no language payloads matched", file=sys.stderr)
+        return 1
+
+    banks = [bank for _, bank, _, _ in targets]
+
+    if not validate_sources(repo, args.romid, banks):
+        return 1
+
+    env = os.environ.copy()
+    env["ROMID"] = args.romid
+
+    for moddir, bank, lang_key, filename in targets:
+        source = os.path.join(repo, "src", "assets", args.romid, "lang", f"{bank}.json")
+        outpath = os.path.join(repo, moddir, "files", filename)
+        cmd = [mklang, source, lang_key, "--raw-out", outpath]
+        subprocess.run(cmd, cwd=repo, env=env, check=True)
+
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

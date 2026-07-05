@@ -1,0 +1,86 @@
+# GoldenEye X Multiplayer Mod for All in One Mod v10
+# Author: Jonaeru / Atari-Dude
+
+# GoldenEye X by Wreck
+# http://n64vault.com/pd-multi-levels:goldeneye-x
+
+# Paradox by TimEh
+# http://n64vault.com/ge-multi-levels:paradox-1-1
+
+# Rogue Control Center by EternallyAries
+# https://n64vault.com/ge-multi-levels:rogue-control-center
+
+# Grand Library by EternallyAries
+
+# Revision History
+# v3: Added models for coexistence with Perfect Dark Plus Mod (September 1, 2024)
+#     - CtestchrZ (Dr. Caroll Body/Head File)
+#     - Pttb_boxZ (Dr. Caroll Hand File)
+#     - PchrflashbangZ (Skedar Hand File)
+#     - PdoorconsoleZ (Skedar Body/Head File)
+#     - CheadgreyZ (Joanna Dark (JP version))
+#     - Gm16Z (AR53 (AR33))
+#     - Gmp5kZ (DMC (D5K))
+#     - GskorpionZ (KLO1313 (KLOBB))
+# v4: Renamed Skedar, Dr. Carroll Models (November 3, 2024)
+#     CtestchrZ -> Ccarroll2Z
+#     Pttb_boxZ -> Cskedar2Z
+#     PchrflashbangZ -> Ghand_carollZ
+#     PdoorconsoleZ -> Ghand_skedarZ
+# v5: Fixed incorrectly displayed textures. Thank you so much, Atari-Dude. (November 29, 2024)
+#     Added the model "Pdd_grateZ" (Train floor panel)
+# v6: Added Cliff Base and Archive BZ from GoldenEye X 6a (January 26, 2025)
+# v7: Removed Archives settings (February 8, 2025)
+# v8: Extend stage table for GoldenEye X, and fix level IDs accordingly (March 1, 2025)
+# v9: Replaced Skedar and Dr. Carroll Models last version by Wreck. Thank you so much, Wreck. (April 10, 2025)
+#     Merged Atari-Dude mod files. Skedar model texture conflict resolved. Thank you so much, Atari-Dude.
+# v10: Merged Atari-Dude mod files (July 20, 2025)
+
+# Playable:
+# - Temple
+# - Complex
+# - Caves
+# - Library
+# - Basement
+# - Stack
+# - Facility
+# - Bunker
+# - Archives
+# - Caverns (broken water texture)
+# - Egyptian
+# - Facility BZ
+# - Frigate
+# - Archives BZ
+# - Archives 1F (from GE-X 5e)
+# - Streets
+# - Train
+# - Cradle
+# - Aztec
+# - Labyrinth
+# - Icicle Pyramid
+# - Ciff Base (broken water texture)
+
+# Bunker
+stage 0x10 {
+  bgfile "bgdata/bg_tra.seg"
+  tilesfile "bgdata/bg_tra_tilesZ"
+}
+
+# Facility BZ
+stage 0x49 {
+  bgfile "bgdata/bg_mp5.seg"
+  tilesfile "bgdata/bg_mp5_tilesZ"
+}
+
+# Train
+stage 0x07 {
+  bgfile "bgdata/bg_run.seg"
+  tilesfile "bgdata/bg_run_tilesZ"
+}
+
+# Archives 1F (from GE-X 5e)
+stage 0x14 {
+  bgfile "bgdata/bg_silo.seg"
+  tilesfile "bgdata/bg_silo_tilesZ"
+  padsfile "bgdata/bg_silo_padsZ"
+}
