@@ -17,7 +17,7 @@ pd.ntsc-final.z64
 The expected MD5 checksum is:
 
 ```text
-e03b088b6ac9e0080440efed07c1e40f
+7f4171b0c8d17815be37913f535e4e93
 ```
 
 Place the ROM here:
@@ -34,8 +34,8 @@ Perfect Dark Renaissance is an unofficial fan project. It is not affiliated with
 
 - Primary focus: local multiplayer and Combat Simulator.
 - Primary target: English US v1.1/NTSC-final.
-- Tested development platform: Apple Silicon macOS.
-- Windows and Linux builds use the underlying PC port build system but require platform-specific testing.
+- Tested platforms: Apple Silicon macOS and Windows x64 through MSYS2 MINGW64.
+- Linux builds use the underlying PC port build system but require platform-specific testing.
 - Some custom modes remain experimental.
 - Existing Perfect Dark EEPROM or profile data may be incompatible.
 
@@ -73,7 +73,9 @@ Run the resulting executable from the repository root with these mod-directory a
 --gexmoddir ./mods/mod_gex
 ```
 
-Windows packaging and runtime behavior should be verified on an actual Windows system before publishing a Windows release.
+The Windows x64 release package includes `Play-Renaissance.bat`, the executable, and
+the required runtime DLLs. After adding your ROM at the path shown above,
+double-click `Play-Renaissance.bat` to launch with the required mod directories.
 
 ## Building on Linux
 

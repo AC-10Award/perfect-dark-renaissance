@@ -863,8 +863,8 @@ static s32 extMusicDecodeMenuPcm(void)
 
 	{
 		const u32 targetFrames = (u32)(((u64)sourceFrames * EXT_MUSIC_TARGET_HZ) / (u32)sourceHz);
-		u32 phase = 0;
-		const u32 phaseStep = (u32)(((u64)sourceHz << EXT_MUSIC_PHASE_BITS) / EXT_MUSIC_TARGET_HZ);
+		u64 phase = 0;
+		const u64 phaseStep = ((u64)sourceHz << EXT_MUSIC_PHASE_BITS) / EXT_MUSIC_TARGET_HZ;
 
 		if (targetFrames > EXT_MUSIC_MAX_DECODED_FRAMES) {
 			sysMemFree(sourceMono);
@@ -881,8 +881,8 @@ static s32 extMusicDecodeMenuPcm(void)
 		}
 
 		for (u32 i = 0; i < targetFrames; i++) {
-			const u32 idx = phase >> EXT_MUSIC_PHASE_BITS;
-			const u32 frac = phase & (EXT_MUSIC_PHASE_ONE - 1);
+			const u32 idx = (u32)(phase >> EXT_MUSIC_PHASE_BITS);
+			const u32 frac = (u32)(phase & (EXT_MUSIC_PHASE_ONE - 1));
 			const s32 s0 = sourceMono[idx < sourceFrames ? idx : sourceFrames - 1];
 			const s32 s1 = sourceMono[idx + 1 < sourceFrames ? idx + 1 : sourceFrames - 1];
 			resampled[i] = (s16)(s0 + (((s1 - s0) * (s32)frac) >> EXT_MUSIC_PHASE_BITS));
